@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
 	<!-- Кодировка веб-страницы -->
 	<meta charset="UTF-8">
@@ -7,10 +7,6 @@
   	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   	<!-- Подключаем css -->
 	<link rel="stylesheet" href="css/style.css">
-  	<!-- Подключаем шрифт -->
-  	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-  	<!-- Подключаем иконки -->
-  	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.4/css/all.css" integrity="sha384-DmABxgPhJN5jlTwituIyzIUk6oqyzf3+XuP7q3VfcWA2unxgim7OSSZKKf0KSsnh" crossorigin="anonymous">
   	<!-- Подключаем скрипты -->
   	<script type="text/javascript" src="js/script.js"></script>
   	<!-- meta -->
@@ -29,19 +25,19 @@
 					<div class="header__menu">
 						<nav class="header__menu-list">
 							<div class="header__menu-item">
-								<a href="" class="header__item-link">Home</a>
+								<a href="#" class="header__item-link">Home</a>
 							</div>
 							<div class="header__menu-item">
-								<a href="" class="header__item-link">Portfolio</a>
+								<a href="#portfolio" class="header__item-link">Portfolio</a>
 							</div>
 							<div class="header__menu-item">
-								<a href="" class="header__item-link">Blog</a>
+								<a href="#sendUs" class="header__item-link">Send us</a>
 							</div>
 							<div class="header__menu-item">
-								<a href="" class="header__item-link">Pages</a>
+								<a href="#aboutUs" class="header__item-link">About us</a>
 							</div>
 							<div class="header__menu-item">
-								<a href="" class="header__item-link">Shortcodes</a>
+								<a href="#ourTeam" class="header__item-link">Our team</a>
 							</div>
 						</nav>
 					</div>
@@ -51,16 +47,16 @@
 		<div class="content">
 			<section class="layer-slider">
 				<div class="layer-slider__wrap">
-					<div class="layer-slider__background active"></div>
-					<div class="layer-slider__background"></div>
+					<div class="layer-slider__background active">1</div>
+					<div class="layer-slider__background">2</div>
 					<div class="container">
 						<div class="review-slider">
 							<div class="review-slider__block-view">
 							</div>
 							<div class="review-slider__block-control">
 								<div class="review-slider__control-dots">
-									<span class="control-dots__item" onclick="currentSlide(1)"></span>
-									<span class="control-dots__item active" onclick="currentSlide(2)"></span>
+									<span class="control-dots__item active" onclick="currentSlide(1)"></span>
+									<span class="control-dots__item" onclick="currentSlide(2)"></span>
 								</div>
 								<div class="review-slider__control-arrows">
 									<span class="control-arrows__item-left" onclick="previousSlide()"></span>
@@ -72,6 +68,7 @@
 				</div>
 			</section>
 			<section class="sub-slider">
+				<a name="portfolio"></a>
 				<div class="container">
 					<div class="sub-slider__title">
 						<span class="sub-slider__title-word">SHOWCASING</span> YOUR WORK HAS NEVER BEEN MORE FUN
@@ -180,34 +177,40 @@
 				</div>
 			</section>
 			<section class="send-us-mail">
+				<a name="sendUs"></a>
 				<div class="container">
 					<div class="send-us-mail__title">
 						Send us mail
 					</div>
-					<form action="#" method="POST" class="send-us-mail__form">
+					<form action="#" method="POST" class="send-us-mail__form" id="feedback" name="send_us_mail">
 						<div class="page-contacts__form-item">
 							<label for="name" class="form-control__field-name">Name <span class="form-control__field-necessary">*</span></label>
 							<input type="text" name="name" id="name" class="form-control__field page-contacts__name">
+							<span class="form-control__error"></span>
 						</div>
 						<div class="page-contacts__form-item">
 							<label for="email" class="form-control__field-name">E-Mail <span class="form-control__field-necessary">*</span></label>
 							<input type="email" name="email" id="email" class="form-control__field page-contacts__email">
+							<span class="form-control__error"></span>
 						</div>
 						<div class="page-contacts__form-item">
 							<label for="subject" class="form-control__field-name">Subject <span class="form-control__field-necessary">*</span></label>
 							<input type="text" name="subject" id="subject" class="form-control__field page-contacts__subject">
+							<span class="form-control__error"></span>
 						</div>
 						<div class="page-contacts__form-item">
 							<label for="message" class="form-control__field-name">Message <span class="form-control__field-necessary">*</span></label>
 							<textarea name="message" id="message" cols="30" rows="7" class="form-control__field page-contacts__textarea"></textarea>
+							<span class="form-control__error"></span>
 						</div>
 						<div class="page-contacts__form-item">
-							<button type="submit" class="page-contacts__form-button">Submit</button>
+							<button type="button" class="page-contacts__form-button" id="send_mess" onclick="valid(document.getElementById('feedback'))">Submit</button>
 						</div>
 					</form>
 				</div>
 			</section>
 			<section class="about-us">
+				<a name="aboutUs"></a>
 				<div class="about-us__wrap">
 					<div class="container">
 						<div class="about-us__work-area">
@@ -294,6 +297,7 @@
 				</div>
 			</section>
 			<section class="team-members">
+				<a name="ourTeam"></a>
 				<div class="container">
 					<div class="team-members__wrap">
 						<div class="team-members__column">
@@ -456,7 +460,11 @@
 				</div>
 			</div>
 			<div class="footer__copyright">
-				
+				<div class="container">
+					<div class="footer__copyright-block">
+						© Copyright
+					</div>
+				</div>
 			</div>
 		</footer>
 	</div>
